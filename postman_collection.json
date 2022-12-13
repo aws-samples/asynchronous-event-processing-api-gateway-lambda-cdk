@@ -1,0 +1,228 @@
+{
+  "info": {
+    "description": "Jobs API",
+    "name": "JobsAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "jobs",
+      "item": [
+        {
+          "name": "/jobs",
+          "request": {
+            "auth": {
+              "awsv4": [
+                {
+                  "key": "accessKey",
+                  "value": "{{accessKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "saveHelper",
+                  "value": true,
+                  "type": "boolean"
+                },
+                {
+                  "key": "secretKey",
+                  "value": "{{secretKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "sessionToken",
+                  "value": "{{sessionToken}}",
+                  "type": "string"
+                }
+              ],
+              "type": "awsv4"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"seconds\": {{seconds}}\n}"
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "jobs"
+              ],
+              "raw": "{{baseUrl}}/jobs"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "200 response",
+              "originalRequest": {
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "raw": "{{baseUrl}}/jobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "jobs"
+                  ]
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "/jobs/:jobId",
+          "request": {
+            "auth": {
+              "type": "awsv4",
+              "awsv4": [
+                {
+                  "key": "accessKey",
+                  "value": "{{accessKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "saveHelper",
+                  "value": true,
+                  "type": "boolean"
+                },
+                {
+                  "key": "secretKey",
+                  "value": "{{secretKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "sessionToken",
+                  "value": "{{sessionToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/jobs/:jobid",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "jobs",
+                ":jobid"
+              ],
+              "variable": [
+                {
+                  "description": "(Required)",
+                  "key": "jobid",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "name": "200 response",
+              "originalRequest": {
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/jobs/:jobId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "variable": [
+                    {
+                      "description": "(Required)",
+                      "enabled": true,
+                      "key": "jobId",
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "accessKey",
+      "type": "default"
+    },
+    {
+      "key": "baseUrl",
+      "type": "string"
+    },
+    {
+      "key": "seconds",
+      "type": "number"
+    },
+    {
+      "key": "secretKey",
+      "type": "string"
+    },
+    {
+      "key": "sessionToken",
+      "type": "string"
+    }
+  ]
+}

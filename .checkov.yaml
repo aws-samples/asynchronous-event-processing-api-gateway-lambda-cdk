@@ -1,0 +1,7 @@
+compact: true
+download-external-modules: true
+evaluate-variables: true
+quiet: true
+skip-download: true
+skip-fixes: true
+soft-fail: false

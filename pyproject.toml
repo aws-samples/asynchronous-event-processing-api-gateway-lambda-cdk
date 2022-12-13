@@ -1,0 +1,22 @@
+[tool.autopep8]
+aggressive = 3
+exclude = "./cdk.out/*"
+in-place = true
+recursive = true
+
+[tool.bandit]
+exclude_dirs = [
+  ".env",
+  "cdk.out",
+]
+
+[tool.commitizen]
+bump_message = "chore(release): $new_version"
+update_changelog_on_bump = true
+version = "0.3.5"
+
+[tool.pytest.ini_options]
+env = [
+  "TABLE_NAME=jobs",
+  "TIMEOUT=300",
+]
