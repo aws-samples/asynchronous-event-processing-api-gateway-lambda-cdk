@@ -56,7 +56,7 @@
       "description": "Bumps version",
       "steps": [
         {
-          "exec": "cz bump --check-consistency 1.0.0"
+          "exec": "cz bump --check-consistency 1.0.1"
         }
       ]
     },
