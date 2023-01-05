@@ -162,6 +162,7 @@ To try the sample architecture included in this repository proceed to:
 - [set](https://learning.postman.com/docs/sending-requests/variables/) the `JobsAPI` variables as following:
   - `accessKey`: value of the `Credentials.AccessKeyId` attribute from the `assume-role` command;
   - `baseUrl`: value of the `JobsApiJobsAPIEndpoint` output from the deploy command **without trailing slash**;
+  - `region`: value of the [AWS Region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions) where you deployed the sample architecture;
   - `seconds`: a positive integer of your choice;
   - `secretKey`: value of the `Credentials.SecretAccessKey` attribute from the `assume-role` command;
   - `sessionToken`: value of the `Credentials.SessionToken` attribute from the `assume-role` command;

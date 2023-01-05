@@ -19,6 +19,11 @@
                   "type": "string"
                 },
                 {
+                  "key": "region",
+                  "value": "{{region}}",
+                  "type": "string"
+                },
+                {
                   "key": "saveHelper",
                   "value": true,
                   "type": "boolean"
@@ -106,6 +111,11 @@
                 {
                   "key": "accessKey",
                   "value": "{{accessKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "region",
+                  "value": "{{region}}",
                   "type": "string"
                 },
                 {
@@ -206,10 +216,14 @@
   "variable": [
     {
       "key": "accessKey",
-      "type": "default"
+      "type": "string"
     },
     {
       "key": "baseUrl",
+      "type": "string"
+    },
+    {
+      "key": "region",
       "type": "string"
     },
     {
