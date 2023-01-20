@@ -1,4 +1,4 @@
-from awslambdaric.lambda_context import (
+from aws_lambda_powertools.utilities.typing import (
     LambdaContext,
 )
 from botocore.stub import (

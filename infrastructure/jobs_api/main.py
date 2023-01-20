@@ -10,11 +10,15 @@ from aws_cdk.aws_apigateway import (
     EndpointType,
     IntegrationOptions,
     IntegrationResponse,
+    JsonSchema,
+    JsonSchemaType,
+    JsonSchemaVersion,
     LambdaIntegration,
     LogGroupLogDestination,
     MethodResponse,
     Model,
     PassthroughBehavior,
+    RequestValidatorOptions,
     RestApi,
     StageOptions,
 )
@@ -98,6 +102,25 @@ class JobsApiConstruct(Construct):
         self.__jobs_api_invoke_role_policy = Policy(
             self,
             "JobsAPIInvokeRolePolicy",
+        )
+        self.__jobs_request_model = Model(
+            self,
+            "JobsRequestModel",
+            content_type="application/json",
+            description="Model for requests to /jobs",
+            model_name="JobsRequest",
+            rest_api=self.__jobs_api,
+            schema=JsonSchema(
+                properties={
+                    "seconds": JsonSchema(
+                        minimum=1,
+                        type=JsonSchemaType.INTEGER,
+                    ),
+                },
+                schema=JsonSchemaVersion.DRAFT4,
+                title="Jobs Request Schema",
+                type=JsonSchemaType.OBJECT,
+            ),
         )
         self.__jobs_resource = self.__jobs_api.root.add_resource("jobs")
         self.__job_id_resource = self.__jobs_resource.add_resource("{jobId}")
@@ -252,7 +275,14 @@ class JobsApiConstruct(Construct):
                         "}",
                     ])
                 }
-            )
+            ),
+            request_models={
+                "application/json": self.__jobs_request_model,
+            },
+            request_validator_options=RequestValidatorOptions(
+                validate_request_body=True,
+                validate_request_parameters=False,
+            ),
         )
 
         __jobs_method.add_method_response(

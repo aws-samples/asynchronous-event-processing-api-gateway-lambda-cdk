@@ -1,15 +1,11 @@
 {
   "dependencies": [
     {
-      "name": "autopep8==1.7.1",
+      "name": "autopep8==2.0.1",
       "type": "devenv"
     },
     {
-      "name": "aws-lambda-powertools==2.1.0",
-      "type": "devenv"
-    },
-    {
-      "name": "awslambdaric==2.0.4",
+      "name": "aws-lambda-powertools==2.6.0",
       "type": "devenv"
     },
     {
@@ -17,27 +13,27 @@
       "type": "devenv"
     },
     {
-      "name": "boto3==1.26.1",
+      "name": "boto3==1.26.53",
       "type": "devenv"
     },
     {
-      "name": "botocore==1.29.1",
+      "name": "botocore==1.29.53",
       "type": "devenv"
     },
     {
-      "name": "cfn-lint==0.69.1",
+      "name": "cfn-lint==0.72.9",
       "type": "devenv"
     },
     {
-      "name": "checkov==2.2.11",
+      "name": "checkov==2.2.281",
       "type": "devenv"
     },
     {
-      "name": "commitizen==2.37.0",
+      "name": "commitizen==2.39.1",
       "type": "devenv"
     },
     {
-      "name": "pre-commit==2.20.0",
+      "name": "pre-commit==2.21.0",
       "type": "devenv"
     },
     {
@@ -46,16 +42,20 @@
       "type": "devenv"
     },
     {
+      "name": "pydantic==1.10.4",
+      "type": "devenv"
+    },
+    {
       "name": "pytest-env==0.8.1",
       "type": "devenv"
     },
     {
-      "name": "pytest==7.2.0",
+      "name": "pytest==7.2.1",
       "type": "devenv"
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.50.0",
+      "version": "^2.61.0",
       "type": "runtime"
     },
     {
