@@ -1,3 +1,9 @@
+## 1.0.3 (2023-01-20)
+
+### Feat
+
+- add security improvements
+
 ## 1.0.2 (2023-01-17)
 
 ### Fix

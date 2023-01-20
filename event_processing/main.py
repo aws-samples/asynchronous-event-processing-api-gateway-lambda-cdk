@@ -1,7 +1,11 @@
 from aws_lambda_powertools import (
     Logger,
 )
-from awslambdaric.lambda_context import (
+from aws_lambda_powertools.utilities.parser import (
+    BaseModel,
+    event_parser,
+)
+from aws_lambda_powertools.utilities.typing import (
     LambdaContext,
 )
 from boto3 import (
@@ -14,17 +18,27 @@ from time import (
     sleep,
 )
 
+
+class Parameters(BaseModel):
+    seconds: int
+
+
+class Event(BaseModel):
+    id: str
+    parameters: Parameters
+
+
+TABLE_NAME = getenv("TABLE_NAME")
+TIMEOUT = int(getenv("TIMEOUT"))
+dynamodb = client("dynamodb")
 logger = Logger(
     level=getenv("LOG_LEVEL", "INFO"),
     service="jobs_processing",
 )
-TABLE_NAME = getenv("TABLE_NAME")
-TIMEOUT = int(getenv("TIMEOUT"))
-dynamodb = client("dynamodb")
 
 
-def event_processing(parameters: dict) -> str:
-    seconds = parameters["seconds"]
+def event_processing(parameters: Parameters) -> str:
+    seconds = parameters.seconds
     message = f"I slept for {seconds} seconds"
 
     if seconds > TIMEOUT:
@@ -35,11 +49,12 @@ def event_processing(parameters: dict) -> str:
     return f"{{\"message\": \"{message}\"}}"
 
 
-def handler(event: dict, context: LambdaContext) -> None:
+@event_parser(model=Event)
+def handler(event: Event, context: LambdaContext) -> None:
     logger.debug(event)
 
-    id = event["id"]
-    parameters = event["parameters"]
+    id = event.id
+    parameters = event.parameters
     results = event_processing(parameters)
 
     dynamodb.put_item(

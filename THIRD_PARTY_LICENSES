@@ -4,7 +4,6 @@ Name               | License                               | URL
 autopep8              | MIT License                           | https://github.com/hhatto/autopep8/blob/main/LICENSE
 aws-cdk-lib           | Apache License 2.0                    | https://github.com/aws/aws-cdk/blob/main/LICENSE
 aws-lambda-powertools | MIT No Attribution                    | https://github.com/awslabs/aws-lambda-powertools-python/blob/develop/LICENSE
-awslambdaric          | Apache License 2.0                    | https://github.com/aws/aws-lambda-python-runtime-interface-client/blob/main/LICENSE
 bandit                | Apache License 2.0                    | https://github.com/PyCQA/bandit/blob/main/LICENSE
 boto3                 | Apache License 2.0                    | https://github.com/boto/boto3/blob/develop/LICENSE
 botocore              | Apache License 2.0                    | https://github.com/boto/botocore/blob/develop/LICENSE.txt
@@ -14,5 +13,6 @@ commitizen            | MIT License                           | https://github.c
 constructs            | Apache License 2.0                    | https://github.com/aws/constructs/blob/10.x/LICENSE
 pre-commit            | MIT License                           | https://github.com/pre-commit/pre-commit/blob/main/LICENSE
 projen                | Apache License 2.0                    | https://github.com/projen/projen/blob/main/LICENSE
+pydantic              | MIT License                           | https://github.com/pydantic/pydantic/blob/main/LICENSE
 pytest-env            | MIT License                           | https://github.com/pytest-dev/pytest-env/blob/main/LICENSE
 pytest                | MIT License                           | https://github.com/pytest-dev/pytest/blob/main/LICENSE

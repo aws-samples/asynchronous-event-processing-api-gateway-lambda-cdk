@@ -28,11 +28,17 @@ If the error handling fails:
 1. The error handling function sends the event to an Amazon EventBridge archive
 2. The user can replay the archived events by using the related Amazon EventBridge feature
 
+### Best Practices
+
+- This sample architecture doesn't include monitoring of the deployed infrastructure. If your use case requires monitoring, evaluate to add it (for example, using [CDK Monitoring Constructs](https://constructs.dev/packages/cdk-monitoring-constructs))
+- This sample architecture uses [IAM Permissions](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) to control the access to the jobs API. Anyone authorized to assume the `JobsAPIInvokeRole` will be able to invoke the jobs API: as such, the access control mechanism is binary. If your use case requires a more complex authorization model, evaluate to [use a different access control mechanism](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html)
+- When a user does an HTTP POST request to the `/jobs` jobs API endpoint, the input data is validated at two different levels: Amazon API Gateway is in charge of the first [request validation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html) while the event processing function executes the second one. No validation is performed when the user does an HTTP GET request to the `/jobs/{jobId}` jobs API endpoint. If your use case requires additional input validation and an increased level of security, evaluate to [use AWS WAF to protect your API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-aws-waf.html)
+
 ## Prerequisites
 
 Install on your workstation the following tools:
 
-- [AWS Cloud Development Kit (CDK) Toolkit](https://docs.aws.amazon.com/cdk/v2/guide/cli.html) version `2.60.0`
+- [AWS Cloud Development Kit (CDK) Toolkit](https://docs.aws.amazon.com/cdk/v2/guide/cli.html) version `2.61.0`
 - [Docker](https://docs.docker.com/get-docker/) version `20.10.21`
 - [Node.js](https://nodejs.org/en/download/) version `18.13.0`
 - [Projen](https://pypi.org/project/projen/) version `0.67.3`

@@ -1,4 +1,4 @@
-from awslambdaric.lambda_context import (
+from aws_lambda_powertools.utilities.typing import (
     LambdaContext,
 )
 from aws_lambda_powertools import (
@@ -14,12 +14,12 @@ from os import (
     getenv,
 )
 
+TABLE_NAME = getenv("TABLE_NAME")
+dynamodb = client("dynamodb")
 logger = Logger(
     level=getenv("LOG_LEVEL", "INFO"),
     service="error_handling",
 )
-TABLE_NAME = getenv("TABLE_NAME")
-dynamodb = client("dynamodb")
 
 
 def handler(event: dict, context: LambdaContext) -> None:
