@@ -30,7 +30,7 @@ project = AwsCdkPythonApp(
     github=False,
     license="MIT-0",
     module_name="infrastructure",
-    name="aws-asynchronous-processing-api-gateway-lambda-cdk",
+    name="asynchronous-processing-api-gateway-lambda-cdk",
     project_type=ProjectType.APP,
     version=__version__,
 )
