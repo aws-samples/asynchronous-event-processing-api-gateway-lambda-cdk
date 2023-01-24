@@ -1,3 +1,9 @@
+## 1.0.4 (2023-01-24)
+
+### Fix
+
+- set correct project name
+
 ## 1.0.3 (2023-01-20)
 
 ### Feat

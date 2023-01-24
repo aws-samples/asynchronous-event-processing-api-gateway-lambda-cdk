@@ -5,7 +5,7 @@ from projen.awscdk import (
     AwsCdkPythonApp,
 )
 
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 project = AwsCdkPythonApp(
     auto_merge=False,
     author_email="meronian@amazon.ch",
@@ -30,7 +30,7 @@ project = AwsCdkPythonApp(
     github=False,
     license="MIT-0",
     module_name="infrastructure",
-    name="aws-asynchronous-processing-api-gateway-lambda-cdk",
+    name="asynchronous-processing-api-gateway-lambda-cdk",
     project_type=ProjectType.APP,
     version=__version__,
 )
