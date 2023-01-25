@@ -18,8 +18,8 @@ def template() -> Template:
     app = App()
     stack = InfrastructureStack(
         app,
-        "AsynchronousProcessingAPIGatewayLambda",
-        description="Asynchronous Processing with API Gateway and Lambda"
+        "AsynchronousEventProcessingAPIGatewayLambda",
+        description="Asynchronous Event Processing with API Gateway and Lambda"
     )
     template = Template.from_stack(stack)
 

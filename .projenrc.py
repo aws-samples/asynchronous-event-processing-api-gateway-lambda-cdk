@@ -5,7 +5,7 @@ from projen.awscdk import (
     AwsCdkPythonApp,
 )
 
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 project = AwsCdkPythonApp(
     auto_merge=False,
     author_email="meronian@amazon.ch",
