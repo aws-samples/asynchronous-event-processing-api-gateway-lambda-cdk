@@ -1,3 +1,9 @@
+## 1.0.5 (2023-01-25)
+
+### Fix
+
+- set correct stack description
+
 ## 1.0.4 (2023-01-24)
 
 ### Fix
