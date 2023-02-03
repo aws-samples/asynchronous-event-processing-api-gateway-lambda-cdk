@@ -255,7 +255,7 @@ class JobsApiConstruct(Construct):
                     IntegrationResponse(
                         response_templates={
                             "application/json": dumps({
-                                "id": "$context.requestId"
+                                "id": "$context.requestId",
                             }),
                         },
                         status_code="200",
