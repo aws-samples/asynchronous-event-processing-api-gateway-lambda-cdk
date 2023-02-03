@@ -33,7 +33,7 @@ TIMEOUT = int(getenv("TIMEOUT"))
 dynamodb = client("dynamodb")
 logger = Logger(
     level=getenv("LOG_LEVEL", "INFO"),
-    service="jobs_processing",
+    service="event_processing",
 )
 
 
