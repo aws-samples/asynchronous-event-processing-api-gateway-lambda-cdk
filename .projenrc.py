@@ -11,6 +11,7 @@ project = AwsCdkPythonApp(
     author_email="meronian@amazon.ch",
     author_name="Andrea Meroni",
     cdk_version="2.61.0",
+    cdk_version_pinning=True,
     commit_generated=False,
     description="Asynchronous Processing with API Gateway and Lambda",
     dev_deps=[
