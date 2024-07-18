@@ -26,7 +26,7 @@ project = AwsCdkPythonApp(
         "pre-commit==2.21.0",
         "pydantic==1.10.4",
         "pytest-env==0.8.1",
-        "pytest==7.2.1",
+        "pytest==7.4.3",
     ],
     github=False,
     license="MIT-0",

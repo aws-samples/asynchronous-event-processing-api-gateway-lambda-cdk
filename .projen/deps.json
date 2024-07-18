@@ -50,7 +50,7 @@
       "type": "devenv"
     },
     {
-      "name": "pytest==7.2.1",
+      "name": "pytest==7.4.3",
       "type": "devenv"
     },
     {
