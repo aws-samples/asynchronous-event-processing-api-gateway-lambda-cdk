@@ -5,7 +5,7 @@ from projen.awscdk import (
     AwsCdkPythonApp,
 )
 
-__version__ = "1.0.8"
+__version__ = "1.0.9"
 project = AwsCdkPythonApp(
     auto_merge=False,
     author_email="meronian@amazon.ch",
@@ -26,7 +26,7 @@ project = AwsCdkPythonApp(
         "pre-commit==2.21.0",
         "pydantic==1.10.4",
         "pytest-env==0.8.1",
-        "pytest==7.2.1",
+        "pytest==7.4.3",
     ],
     github=False,
     license="MIT-0",
